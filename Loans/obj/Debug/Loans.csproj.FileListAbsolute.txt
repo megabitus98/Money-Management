@@ -1,0 +1,15 @@
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\bin\Debug\Loans.exe.config
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\bin\Debug\Loans.exe
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\bin\Debug\Loans.pdb
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.csprojResolveAssemblyReference.cache
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.Properties.Resources.resources
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.csproj.GenerateResource.Cache
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.exe
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.pdb
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.Add_Client.resources
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.Add_Loan.resources
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.Login.resources
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.Main_Menu.resources
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.User_s_List.resources
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.Client_s_List.resources
+D:\Online Clouding\Dropbox\Programare\Loans\Loans\Loans\obj\Debug\Loans.Loan_s_List.resources
