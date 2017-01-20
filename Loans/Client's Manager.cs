@@ -38,16 +38,23 @@ namespace Money_Management
                 using (MySqlConnection conn = new MySqlConnection())
                 {
                     conn.ConnectionString = Properties.Settings.Default.ProjectConnectionString;
-                    conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand("INSERT INTO Client (Name, Phone, Added_Time, Email)" +
-                                                            "values(@Name, @Phone, @Time, @Email)", conn))
+                    try
                     {
-                        cmd.Parameters.AddWithValue("@Phone", Phone.Text);
-                        DateTime rightnow = DateTime.Now;
-                        cmd.Parameters.AddWithValue("@Time", rightnow);
-                        cmd.Parameters.AddWithValue("@Email", Email.Text);
-                        cmd.Parameters.AddWithValue("@Name", NameA.Text + " " + Surname.Text);
-                        cmd.ExecuteNonQuery();
+                        conn.Open();
+                        using (MySqlCommand cmd = new MySqlCommand("INSERT INTO Clients (Name, Phone, Added_Time, Email)" +
+                                                                "values(@Name, @Phone, @Time, @Email)", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@Phone", Phone.Text);
+                            DateTime rightnow = DateTime.Now;
+                            cmd.Parameters.AddWithValue("@Time", rightnow);
+                            cmd.Parameters.AddWithValue("@Email", Email.Text);
+                            cmd.Parameters.AddWithValue("@Name", NameA.Text + " " + Surname.Text);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    catch (Exception z)
+                    {
+                        Useful.Error_Message(z, true);
                     }
                 }
                 foreach (Control tb in Add_Client_GroupBox.Controls)
@@ -60,14 +67,21 @@ namespace Money_Management
             }
             using (MySqlConnection c = new MySqlConnection(Properties.Settings.Default.ProjectConnectionString))
             {
-                c.Open();
-                using (MySqlCommand cmd = new MySqlCommand("SELECT Name FROM Client", c))
+                try
                 {
-                    var dt = new DataTable();
-                    dt.Load(cmd.ExecuteReader());
-                    Clients_List.ValueMember = "Name";
-                    Clients_List.DisplayMember = "Name";
-                    Clients_List.DataSource = dt;
+                    c.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT Name FROM Clients", c))
+                    {
+                        var dt = new DataTable();
+                        dt.Load(cmd.ExecuteReader());
+                        Clients_List.ValueMember = "Name";
+                        Clients_List.DisplayMember = "Name";
+                        Clients_List.DataSource = dt;
+                    }
+                }
+                catch (Exception z)
+                {
+                    
                 }
             }
         }
@@ -76,14 +90,21 @@ namespace Money_Management
         {
             using (MySqlConnection c = new MySqlConnection(Properties.Settings.Default.ProjectConnectionString))
             {
-                c.Open();
-                using (MySqlCommand cmd = new MySqlCommand("SELECT Name FROM Client", c))
+                try
                 {
-                    var dt = new DataTable();
-                    dt.Load(cmd.ExecuteReader());
-                    Clients_List.ValueMember = "Name";
-                    Clients_List.DisplayMember = "Name";
-                    Clients_List.DataSource = dt;
+                    c.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT Name FROM Clients", c))
+                    {
+                        var dt = new DataTable();
+                        dt.Load(cmd.ExecuteReader());
+                        Clients_List.ValueMember = "Name";
+                        Clients_List.DisplayMember = "Name";
+                        Clients_List.DataSource = dt;
+                    }
+                }
+                catch (Exception z)
+                {
+                    Useful.Error_Message(z, true);
                 }
             }
             CCI.Enabled = false;
@@ -132,19 +153,26 @@ namespace Money_Management
                 using (MySqlConnection conn = new MySqlConnection())
                 {
                     conn.ConnectionString = Properties.Settings.Default.ProjectConnectionString;
-                    conn.Open();
-                    using (MySqlCommand command = new MySqlCommand("SELECT Name, Email, Phone FROM Client WHERE Name = @Name", conn))
+                    try
                     {
-                        command.Parameters.AddWithValue("@Name", Clients_List.Text);
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        conn.Open();
+                        using (MySqlCommand command = new MySqlCommand("SELECT Name, Email, Phone FROM Clients WHERE Name = @Name", conn))
                         {
-                            while (reader.Read())
+                            command.Parameters.AddWithValue("@Name", Clients_List.Text);
+                            using (MySqlDataReader reader = command.ExecuteReader())
                             {
-                                NameC.Text = (string)reader["Name"];
-                                EmailC.Text = (string)reader["Email"];
-                                PhoneC.Text = (string)reader["Phone"];
+                                while (reader.Read())
+                                {
+                                    NameC.Text = (string)reader["Name"];
+                                    EmailC.Text = (string)reader["Email"];
+                                    PhoneC.Text = (string)reader["Phone"];
+                                }
                             }
                         }
+                    }
+                    catch (Exception z)
+                    {
+                        Useful.Error_Message(z, true);
                     }
                 }
             }
@@ -170,23 +198,37 @@ namespace Money_Management
                     using (MySqlConnection conn = new MySqlConnection())
                     {
                         conn.ConnectionString = Properties.Settings.Default.ProjectConnectionString;
-                        conn.Open();
-                        using (MySqlCommand cmd = new MySqlCommand("DELETE FROM Client WHERE Name=@us", conn))
+                        try
                         {
-                            cmd.Parameters.AddWithValue("@us", Clients_List.Text);
-                            cmd.ExecuteNonQuery();
+                            conn.Open();
+                            using (MySqlCommand cmd = new MySqlCommand("DELETE FROM Clients WHERE Name=@us", conn))
+                            {
+                                cmd.Parameters.AddWithValue("@us", Clients_List.Text);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                        catch (Exception z)
+                        {
+                            Useful.Error_Message(z, true);
                         }
                     }
                     using (MySqlConnection c = new MySqlConnection(Properties.Settings.Default.ProjectConnectionString))
                     {
-                        c.Open();
-                        using (MySqlCommand cmd = new MySqlCommand("SELECT Name FROM Client", c))
+                        try
                         {
-                            var dt = new DataTable();
-                            dt.Load(cmd.ExecuteReader());
-                            Clients_List.ValueMember = "Name";
-                            Clients_List.DisplayMember = "Name";
-                            Clients_List.DataSource = dt;
+                            c.Open();
+                            using (MySqlCommand cmd = new MySqlCommand("SELECT Name FROM Clients", c))
+                            {
+                                var dt = new DataTable();
+                                dt.Load(cmd.ExecuteReader());
+                                Clients_List.ValueMember = "Name";
+                                Clients_List.DisplayMember = "Name";
+                                Clients_List.DataSource = dt;
+                            }
+                        }
+                        catch (Exception z)
+                        {
+                            Useful.Error_Message(z, true);
                         }
                     }
                 }

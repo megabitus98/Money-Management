@@ -20,6 +20,7 @@ namespace Money_Management
             user = username;
             admin = Admin;
             label1.Text += " " + user;
+            label2.Text += Admin;
         }
 
         private void Main_Menu_FormClosed(object sender, FormClosedEventArgs e)
@@ -53,7 +54,10 @@ namespace Money_Management
 
         private void Main_Menu_Load(object sender, EventArgs e)
         {
-            button1.Enabled = false;
+            if (admin == 1)
+            {
+                button1.Enabled = true;
+            }
         }
 
         private void Button2_Click(object sender, EventArgs e)

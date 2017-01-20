@@ -26,12 +26,19 @@ namespace Money_Management
         {
             using (MySqlConnection c = new MySqlConnection(Properties.Settings.Default.ProjectConnectionString))
             {
-                c.Open();
-                using (MySqlDataAdapter cmd = new MySqlDataAdapter("SELECT * FROM Client", c))
+                try
                 {
-                    DataTable table = new DataTable();
-                    cmd.Fill(table);
-                    dataGridView1.DataSource = table;
+                    c.Open();
+                    using (MySqlDataAdapter cmd = new MySqlDataAdapter("SELECT * FROM Clients", c))
+                    {
+                        DataTable table = new DataTable();
+                        cmd.Fill(table);
+                        dataGridView1.DataSource = table;
+                    }
+                }
+                catch (Exception z)
+                {
+                    Useful.Error_Message(z, true);
                 }
             }
         }

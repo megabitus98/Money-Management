@@ -145,5 +145,27 @@ namespace Money_Management
         }
 
         #endregion
+
+        #region Useful Commands
+
+        public static void Error_Message(Exception error, bool close)
+        {
+            MessageBox.Show("Error, " + error.Message, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (close == true)
+            {
+                Application.Exit();
+            }
+        }
+
+        public static void Error_Message(string error, bool close)
+        {
+            MessageBox.Show("Error, " + error, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (close == true)
+            {
+                Application.Exit();
+            }
+        }
+
+        #endregion
     }
 }

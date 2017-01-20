@@ -57,8 +57,7 @@ namespace Money_Management
                 }
                 catch (Exception z)
                 {
-                    MessageBox.Show("Error, " + z.Message, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Application.Exit();
+                    Useful.Error_Message(z, true);
                 }
                 if (OK == true)
                 {
@@ -72,11 +71,10 @@ namespace Money_Management
                     }
                     catch (Exception z)
                     {
-                        MessageBox.Show("Error, " + z.Message, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Application.Exit();
+                        Useful.Error_Message(z, true);
                     }
                 }
-                else MessageBox.Show("Error, no acount with these credetials!", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else Useful.Error_Message("Error, no account with these credetials!", true);
             }
         }
 
