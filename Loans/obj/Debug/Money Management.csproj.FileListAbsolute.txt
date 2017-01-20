@@ -1,0 +1,15 @@
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.csprojResolveAssemblyReference.cache
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Properties.Resources.resources
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.csproj.GenerateResource.Cache
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Add_Client.resources
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Add_Loan.resources
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Client_s_List.resources
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Loan_s_List.resources
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Login.resources
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Main_Menu.resources
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.User_s_List.resources
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.exe.config
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.exe
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.pdb
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.exe
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.pdb

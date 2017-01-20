@@ -1,4 +1,4 @@
-﻿namespace Loans
+﻿namespace Money_Management
 {
     partial class Loan_s_List
     {

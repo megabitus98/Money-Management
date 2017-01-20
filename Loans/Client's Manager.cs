@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Loans
+namespace Money_Management
 {
     public partial class Add_Client : Form
     {

@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Loans
+namespace Money_Management
 {
     public partial class Login : Form
     {

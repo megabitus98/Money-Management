@@ -4,7 +4,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 
-namespace Loans
+namespace Money_Management
 {
     class Useful
     {
