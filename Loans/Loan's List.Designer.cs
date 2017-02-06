@@ -49,13 +49,15 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(355, 348);
+            this.button1.Location = new System.Drawing.Point(355, 347);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 30);
+            this.button1.Size = new System.Drawing.Size(81, 31);
             this.button1.TabIndex = 5;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = false;
@@ -68,12 +70,15 @@
             this.ClientSize = new System.Drawing.Size(436, 378);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.MinimizeBox = false;
             this.Name = "Loan_s_List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loan_s_List";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Loan_s_List_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -38,7 +38,7 @@ namespace Money_Management
             using (MySqlConnection c = new MySqlConnection(Properties.Settings.Default.ProjectConnectionString))
             {
                 c.Open();
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT Name FROM Client", c))
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT Name FROM Clients", c))
                     adapter.Fill(ds);
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
@@ -59,7 +59,7 @@ namespace Money_Management
                     {
                         conn.ConnectionString = Properties.Settings.Default.ProjectConnectionString;
                         conn.Open();
-                        using (MySqlCommand command = new MySqlCommand("SELECT Email, Phone, Total_Loans FROM Client WHERE Name = @N", conn))
+                        using (MySqlCommand command = new MySqlCommand("SELECT Email, Phone, Total_Loans FROM Clients WHERE Name = @N", conn))
                         {
                             command.Parameters.AddWithValue("@N", textBox1.Text);
                             using (MySqlDataReader reader = command.ExecuteReader())
@@ -110,22 +110,22 @@ namespace Money_Management
             else if (confirmResult == DialogResult.Yes)
                 if (OK == false)
                 {
-                    int id = 0, money2 = 0;
+                    int id = 0, tl = 0;
                     using (MySqlConnection conn = new MySqlConnection())
                     {
                         conn.ConnectionString = Properties.Settings.Default.ProjectConnectionString;
                         conn.Open();
-                        using (MySqlCommand command = new MySqlCommand("SELECT clientId, Total_Loans FROM Client WHERE Name = @N", conn))
+                        using (MySqlCommand command = new MySqlCommand("SELECT idClients, Total_Loans FROM Clients WHERE Name = @N", conn))
                         {
                             command.Parameters.AddWithValue("@N", textBox1.Text);
                             using (MySqlDataReader reader = command.ExecuteReader())
                                 while (reader.Read())
                                 {
-                                    id = Convert.ToInt32(reader["clientId"]);
-                                    money2 = Convert.ToInt32(reader["Total_Loans"]);
+                                    id = Convert.ToInt32(reader["idClients"]);
+                                    tl = Convert.ToInt32(reader["Total_Loans"]);
                                 }
                         }
-                        using (MySqlCommand cmd = new MySqlCommand("INSERT INTO LOAN (clientId, Money, Tranzaction_Date)" +
+                        using (MySqlCommand cmd = new MySqlCommand("INSERT INTO Loans(clientId, Amount, Tranzaction_Date)" +
                                                                 "values(@id, @money, @date)", conn))
                         {
                             cmd.Parameters.AddWithValue("@id", id);
@@ -134,21 +134,20 @@ namespace Money_Management
                             cmd.Parameters.AddWithValue("@money", textBox2.Text);
                             cmd.ExecuteNonQuery();
                         }
-                        using (MySqlCommand cmd = new MySqlCommand("SELECT loanId FROM LOAN;", conn))
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT idLoan FROM Loans", conn))
                         {
                             using (MySqlDataReader reader = cmd.ExecuteReader())
                             {
                                 while (reader.Read())
                                 {
-                                    id = Convert.ToInt32(reader["loanId"]);
+                                    id = Convert.ToInt32(reader["idLoan"]);
                                 }
                             }
                         }
-                        using (MySqlCommand cmd = new MySqlCommand("UPDATE Client SET Last_Loan = @last, Total_Loans = @amount WHERE Name = @N", conn))
+                        using (MySqlCommand cmd = new MySqlCommand("UPDATE Clients SET Total_Loans = @loan WHERE Name = @N", conn))
                         {
                             cmd.Parameters.AddWithValue("@N", textBox1.Text);
-                            cmd.Parameters.AddWithValue("@last", id);
-                            cmd.Parameters.AddWithValue("@amount", money2 + Convert.ToInt32(textBox2.Text));
+                            cmd.Parameters.AddWithValue("@loan", tl + 1);
                             cmd.ExecuteNonQuery();
                         }
                     }

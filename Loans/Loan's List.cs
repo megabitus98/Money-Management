@@ -34,7 +34,7 @@ namespace Money_Management
             using (MySqlConnection c = new MySqlConnection(Properties.Settings.Default.ProjectConnectionString))
             {
                 c.Open();
-                using (MySqlDataAdapter cmd = new MySqlDataAdapter("SELECT Name, Money, Tranzaction_Date FROM LOAN INNER JOIN Client ON LOAN.clientId=Client.clientId;", c))
+                using (MySqlDataAdapter cmd = new MySqlDataAdapter("SELECT Name, Amount, Tranzaction_Date, Total_Loans FROM Loans INNER JOIN Clients ON Loans.clientId=Clients.idClients", c))
                 {
                     DataTable table = new DataTable();
                     cmd.Fill(table);

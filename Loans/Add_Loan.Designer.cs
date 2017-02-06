@@ -33,6 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.CCI = new System.Windows.Forms.GroupBox();
+            this.Loans = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.PhoneC = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -40,8 +42,7 @@
             this.Back_Button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBoxLoan = new System.Windows.Forms.GroupBox();
-            this.Loans = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.RON = new System.Windows.Forms.Label();
             this.CCI.SuspendLayout();
             this.groupBoxLoan.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +77,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(51, 39);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 20);
+            this.textBox2.Size = new System.Drawing.Size(110, 20);
             this.textBox2.TabIndex = 2;
             // 
             // CCI
@@ -93,6 +94,23 @@
             this.CCI.TabIndex = 16;
             this.CCI.TabStop = false;
             this.CCI.Text = "Client Infromartions";
+            // 
+            // Loans
+            // 
+            this.Loans.Location = new System.Drawing.Point(78, 71);
+            this.Loans.Name = "Loans";
+            this.Loans.ReadOnly = true;
+            this.Loans.Size = new System.Drawing.Size(155, 20);
+            this.Loans.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Total Loans:";
             // 
             // label9
             // 
@@ -150,6 +168,7 @@
             // 
             // groupBoxLoan
             // 
+            this.groupBoxLoan.Controls.Add(this.RON);
             this.groupBoxLoan.Controls.Add(this.label1);
             this.groupBoxLoan.Controls.Add(this.button1);
             this.groupBoxLoan.Controls.Add(this.textBox1);
@@ -162,22 +181,15 @@
             this.groupBoxLoan.TabStop = false;
             this.groupBoxLoan.Text = "Add Loan";
             // 
-            // Loans
+            // RON
             // 
-            this.Loans.Location = new System.Drawing.Point(78, 71);
-            this.Loans.Name = "Loans";
-            this.Loans.ReadOnly = true;
-            this.Loans.Size = new System.Drawing.Size(155, 20);
-            this.Loans.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Total Loans:";
+            this.RON.AutoSize = true;
+            this.RON.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RON.Location = new System.Drawing.Point(161, 42);
+            this.RON.Name = "RON";
+            this.RON.Size = new System.Drawing.Size(34, 13);
+            this.RON.TabIndex = 20;
+            this.RON.Text = "RON";
             // 
             // Add_Loan
             // 
@@ -216,5 +228,6 @@
         private System.Windows.Forms.GroupBox groupBoxLoan;
         private System.Windows.Forms.TextBox Loans;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label RON;
     }
 }
