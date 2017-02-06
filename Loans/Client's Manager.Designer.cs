@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Client));
             this.Add_Client_GroupBox = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Phone = new System.Windows.Forms.TextBox();
@@ -320,6 +321,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Clients_List);
             this.Controls.Add(this.Add_Client_GroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Add_Client";
