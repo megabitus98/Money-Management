@@ -33,7 +33,7 @@ namespace Money_Management
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (useful.CheckEmptySpaces(Add_Client_GroupBox) == false)
+            if (useful.CheckEmptySpaces(Add_Client_GroupBox, Surname, Email, Phone) == false)
             {
                 using (MySqlConnection conn = new MySqlConnection())
                 {
@@ -81,7 +81,7 @@ namespace Money_Management
                 }
                 catch (Exception z)
                 {
-                    
+                    Useful.Error_Message(z, true);
                 }
             }
         }
@@ -185,7 +185,7 @@ namespace Money_Management
 
         private void Clients_List_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Add_Client_GroupBox.Enabled == false)AddInfo();
+            if (Add_Client_GroupBox.Enabled == false) AddInfo();
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -235,5 +235,56 @@ namespace Money_Management
             }
             else MessageBox.Show("Please select a valid user!", "No user selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (useful.CheckEmptySpaces(CCI, EmailC, PhoneC) == false)
+            {
+                using (MySqlConnection conn = new MySqlConnection())
+                {
+                    conn.ConnectionString = Properties.Settings.Default.ProjectConnectionString;
+                    try
+                    {
+                        conn.Open();
+                        using (MySqlCommand cmd = new MySqlCommand("UPDATE Clients SET Name=@Name, " +
+                                                            "Email=@Email, Phone=@Phone WHERE Name = @FNO", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@Name", NameC.Text);
+                            cmd.Parameters.AddWithValue("@Phone", PhoneC.Text);
+                            cmd.Parameters.AddWithValue("@Email", EmailC.Text);
+                            cmd.Parameters.AddWithValue("@FNO", Clients_List.Text);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Changed " + "values for " + NameC.Text, "Modify suceded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception z)
+                    {
+                        Useful.Error_Message(z, true);
+                    }
+                    using (MySqlConnection c = new MySqlConnection(Properties.Settings.Default.ProjectConnectionString))
+                    {
+                        try
+                        {
+                            c.Open();
+                            using (MySqlCommand cmd = new MySqlCommand("SELECT Name FROM Clients", c))
+                            {
+                                var dt = new DataTable();
+                                dt.Load(cmd.ExecuteReader());
+                                Clients_List.ValueMember = "Name";
+                                Clients_List.DisplayMember = "Name";
+                                Clients_List.DataSource = dt;
+                            }
+                        }
+                        catch (Exception z)
+                        {
+                            Useful.Error_Message(z, true);
+                        }
+                    }
+                    Selected.Text = "Selected Client: " + Clients_List.Text;
+                    Mod_client();
+                }
+            }
+        }
+
     }
 }

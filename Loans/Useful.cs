@@ -23,6 +23,26 @@ namespace Money_Management
             return false;
         }
 
+        public bool CheckEmptySpaces(GroupBox con, params TextBox[] exclusion)
+        {
+            foreach (Control co in con.Controls)
+                if (co is TextBox)
+                {
+                    if (string.IsNullOrWhiteSpace(((TextBox)co).Text))
+                    {
+                        bool find = false;
+                        foreach (TextBox text in exclusion)
+                            if (text.Name == co.Name) find = true;
+                        if (find == false)
+                        {
+                            MessageBox.Show("You haven't filled all the values!", "Empty Values", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return true;
+                        }
+                    }
+                }
+            return false;
+        }
+
         public bool CheckEmptySpaces(Form form)
         {
             foreach (Control co in form.Controls)
