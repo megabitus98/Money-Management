@@ -66,7 +66,7 @@ namespace Money_Management
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Client_s_List c = new Client_s_List(user, admin);
+            Client_s_List c = new Client_s_List(user, admin, true);
             c.Show();
             this.Hide();
         }

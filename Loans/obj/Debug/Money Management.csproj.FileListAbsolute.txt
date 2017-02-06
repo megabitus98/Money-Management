@@ -13,3 +13,5 @@ D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Man
 D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.pdb
 D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.exe
 D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.pdb
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.exe.CodeAnalysisLog.xml
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.exe.lastcodeanalysissucceeded

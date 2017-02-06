@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +43,9 @@
             this.Back_Button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBoxLoan = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.RON = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.CCI.SuspendLayout();
             this.groupBoxLoan.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +54,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(51, 13);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(133, 20);
+            this.textBox1.Size = new System.Drawing.Size(110, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
@@ -168,6 +171,7 @@
             // 
             // groupBoxLoan
             // 
+            this.groupBoxLoan.Controls.Add(this.button2);
             this.groupBoxLoan.Controls.Add(this.RON);
             this.groupBoxLoan.Controls.Add(this.label1);
             this.groupBoxLoan.Controls.Add(this.button1);
@@ -181,6 +185,17 @@
             this.groupBoxLoan.TabStop = false;
             this.groupBoxLoan.Text = "Add Loan";
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(164, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 20);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "...";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // RON
             // 
             this.RON.AutoSize = true;
@@ -190,6 +205,10 @@
             this.RON.Size = new System.Drawing.Size(34, 13);
             this.RON.TabIndex = 20;
             this.RON.Text = "RON";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Add_Loan
             // 
@@ -229,5 +248,7 @@
         private System.Windows.Forms.TextBox Loans;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label RON;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

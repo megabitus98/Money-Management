@@ -13,9 +13,10 @@ namespace Money_Management
 {
     public partial class Add_Loan : Form
     {
-        private string user;
-        private int admin, money;
+        private static string user;
+        private static int admin, money;
         List<string> names = new List<string>();
+        List<string> Client = new List<string>();
         Useful usefuel = new Useful();
         public Add_Loan(string username, int Admin)
         {
@@ -23,7 +24,7 @@ namespace Money_Management
             user = username;
             admin = Admin;
         }
-
+        Client_s_List l = new Client_s_List(user, admin, false);
         private void Add_Loan_Load(object sender, EventArgs e)
         {
             textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -98,6 +99,24 @@ namespace Money_Management
                     return false;
             return true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            l.Tag = " ";
+            l.Show();
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if ((string)l.Tag == "Closed")
+            {
+                Client = l.results;
+                textBox1.Text = Client[1];
+                timer1.Stop();
+            }
+        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             var confirmResult = DialogResult.No;

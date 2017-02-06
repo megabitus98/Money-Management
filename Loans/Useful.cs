@@ -104,7 +104,6 @@ namespace Money_Management
                 {
                     conn.Open();
                     connectable = true;
-                    conn.Close();
                 }
                 catch (MySqlException ex)
                 {
