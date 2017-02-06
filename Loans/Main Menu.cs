@@ -21,6 +21,10 @@ namespace Money_Management
             admin = Admin;
             label1.Text += " " + user;
             label2.Text += Admin;
+
+            //TODO REMOVE THOS
+            button1.Hide();
+            button3.Hide();
         }
 
         private void Main_Menu_FormClosed(object sender, FormClosedEventArgs e)
