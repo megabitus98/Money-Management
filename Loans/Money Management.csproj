@@ -102,6 +102,12 @@
     <Compile Include="Client%27s List.Designer.cs">
       <DependentUpon>Client%27s List.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database_Info_Selector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Database_Info_Selector.Designer.cs">
+      <DependentUpon>Database_Info_Selector.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loan%27s List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     </Compile>
     <Compile Include="Main Menu.Designer.cs">
       <DependentUpon>Main Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_loan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pay_loan.Designer.cs">
+      <DependentUpon>Pay_loan.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,6 +151,9 @@
     <EmbeddedResource Include="Client%27s List.resx">
       <DependentUpon>Client%27s List.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Database_Info_Selector.resx">
+      <DependentUpon>Database_Info_Selector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Loan%27s List.resx">
       <DependentUpon>Loan%27s List.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Menu.resx">
       <DependentUpon>Main Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pay_loan.resx">
+      <DependentUpon>Pay_loan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

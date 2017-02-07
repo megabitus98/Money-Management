@@ -41,14 +41,14 @@ namespace Money_Management
         {
             Login l = new Login();
             l.Show();
-            this.Hide();
+            Hide();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
             User_s_List u = new User_s_List(user, admin);
             u.Show();
-            this.Hide();
+            Hide();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -68,28 +68,36 @@ namespace Money_Management
         {
             Client_s_List c = new Client_s_List(user, admin, true);
             c.Show();
-            this.Hide();
+            Hide();
         }
+
 
         private void Button6_Click(object sender, EventArgs e)
         {
             Add_Client m = new Add_Client(user, admin);
             m.Show();
-            this.Hide();
+            Hide();
         }
 
         private void Button7_Click(object sender, EventArgs e)
         {
             Add_Loan l = new Add_Loan(user, admin);
             l.Show();
-            this.Hide();
+            Hide();
         }
 
         private void Button8_Click(object sender, EventArgs e)
         {
             Loan_s_List l = new Loan_s_List(user, admin);
             l.Show();
-            this.Hide();
+            Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Pay_loan l = new Pay_loan(user, admin);
+            l.Show();
+            Hide();
         }
     }
 }

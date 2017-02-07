@@ -19,3 +19,5 @@ D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Man
 D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.application
 D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.exe.manifest
 D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.application
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Pay_loan.resources
+D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Database_Info_Selector.resources
