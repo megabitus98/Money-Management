@@ -74,7 +74,7 @@ namespace Money_Management
                         Useful.Error_Message(z, true);
                     }
                 }
-                else Useful.Error_Message("Error, no account with these credetials!", true);
+                else Useful.Error_Message("Error, no account with these credetials!", false);
             }
         }
 
