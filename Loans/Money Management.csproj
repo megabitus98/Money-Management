@@ -108,6 +108,7 @@
     <Compile Include="Database_Info_Selector.Designer.cs">
       <DependentUpon>Database_Info_Selector.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Loan%27s List.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -21,13 +21,13 @@ namespace Money_Management
             user = username;
             admin = Admin;
         }
-        Database_Info_Selector l = new Database_Info_Selector("Clients", "*");
-        //Client_s_List l = new Client_s_List(user, admin, false);
+        Database_Info_Selector l = new Database_Info_Selector();
 
         private void button2_Click(object sender, EventArgs e)
         {
             l.Tag = " ";
             l.Show();
+            l.Command("SELECT Name, Amount, Tranzaction_Date, Total_Loans, idLoan FROM Loans INNER JOIN Clients ON Loans.clientId=Clients.idClients WHERE Paid=0");
             timer1.Start();
         }
 
@@ -35,9 +35,18 @@ namespace Money_Management
         {
             if ((string)l.Tag == "Closed")
             {
-                Client = l.results;
-                textBox1.Text = Client[1];
                 timer1.Stop();
+                {
+                    Client = l.results;
+                    try
+                    {
+                        textBox1.Text = Client[1];
+                    }
+                    catch (Exception z)
+                    {
+                        Useful.Error_Message(z, false);
+                    }
+                }
             }
         }
 

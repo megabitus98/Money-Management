@@ -172,14 +172,14 @@
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Location = new System.Drawing.Point(12, 118);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 99);
+            this.groupBox1.Size = new System.Drawing.Size(218, 99);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Client Infromartions";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(78, 71);
+            this.textBox3.Location = new System.Drawing.Point(53, 20);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(155, 20);
@@ -188,16 +188,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 74);
+            this.label4.Location = new System.Drawing.Point(6, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Total Loans:";
+            this.label4.Text = "Name:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 22);
+            this.label5.Location = new System.Drawing.Point(6, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 3;
@@ -205,7 +205,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(78, 45);
+            this.textBox4.Location = new System.Drawing.Point(53, 46);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(155, 20);
@@ -214,7 +214,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 48);
+            this.label6.Location = new System.Drawing.Point(6, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 4;
@@ -222,7 +222,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(78, 19);
+            this.textBox5.Location = new System.Drawing.Point(53, 74);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(155, 20);

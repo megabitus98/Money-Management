@@ -25,7 +25,7 @@ namespace Money_Management
             admin = Admin;
         }
         //Client_s_List l = new Client_s_List(user, admin, false);
-        Database_Info_Selector l = new Database_Info_Selector("Clients", "*");
+        Database_Info_Selector l = new Database_Info_Selector();
         private void Add_Loan_Load(object sender, EventArgs e)
         {
             textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -105,6 +105,7 @@ namespace Money_Management
         {
             l.Tag = " ";
             l.Show();
+            l.Select("Clients", "*");
             timer1.Start();
         }
 

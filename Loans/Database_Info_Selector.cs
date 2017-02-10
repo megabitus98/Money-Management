@@ -13,17 +13,13 @@ namespace Money_Management
 {
     public partial class Database_Info_Selector : Form
     {
-        string table_nameo;
-        string[] colo;
         public List<string> results = new List<String>();
-        public Database_Info_Selector(string table_name, params string[] col)
+        public Database_Info_Selector()
         {
             InitializeComponent();
-            table_nameo = table_name;
-            colo = col;
         }
 
-        private void Select(string table_name, params string[] col)
+        public void Select(string table_name, params string[] col)
         {
             string command = "SELECT ";
             foreach (string item in col)
@@ -31,6 +27,20 @@ namespace Money_Management
                 command += item + " ";
             }
             command += "FROM " + table_name;
+            using (MySqlConnection c = new MySqlConnection(Properties.Settings.Default.ProjectConnectionString))
+            {
+                c.Open();
+                using (MySqlDataAdapter cmd = new MySqlDataAdapter(command, c))
+                {
+                    DataTable table = new DataTable();
+                    cmd.Fill(table);
+                    dataGridView1.DataSource = table;
+                }
+            }
+        }
+
+        public void Command(string command)
+        {
             using (MySqlConnection c = new MySqlConnection(Properties.Settings.Default.ProjectConnectionString))
             {
                 c.Open();
@@ -64,7 +74,7 @@ namespace Money_Management
 
         private void Database_Info_Selector_Load(object sender, EventArgs e)
         {
-            Select(table_nameo, colo);
+            //Select(table_nameo, colo);
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -73,7 +83,7 @@ namespace Money_Management
             {
                 dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
-            dataGridView1.Columns[dataGridView1.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridView1.Columns[dataGridView1.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void button1_Click(object sender, EventArgs e)
