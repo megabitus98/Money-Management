@@ -24,7 +24,8 @@ namespace Money_Management
             user = username;
             admin = Admin;
         }
-        Client_s_List l = new Client_s_List(user, admin, false);
+        //Client_s_List l = new Client_s_List(user, admin, false);
+        Database_Info_Selector l = new Database_Info_Selector("Clients", "*");
         private void Add_Loan_Load(object sender, EventArgs e)
         {
             textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
