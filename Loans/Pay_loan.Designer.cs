@@ -40,7 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.CCI = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.EmailC = new System.Windows.Forms.TextBox();
+            this.Tranzaction_Date = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -137,7 +137,7 @@
             // CCI
             // 
             this.CCI.Controls.Add(this.label9);
-            this.CCI.Controls.Add(this.EmailC);
+            this.CCI.Controls.Add(this.Tranzaction_Date);
             this.CCI.Location = new System.Drawing.Point(215, 13);
             this.CCI.Name = "CCI";
             this.CCI.Size = new System.Drawing.Size(172, 99);
@@ -154,13 +154,13 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Tranzaction Date";
             // 
-            // EmailC
+            // Tranzaction_Date
             // 
-            this.EmailC.Location = new System.Drawing.Point(11, 41);
-            this.EmailC.Name = "EmailC";
-            this.EmailC.ReadOnly = true;
-            this.EmailC.Size = new System.Drawing.Size(155, 20);
-            this.EmailC.TabIndex = 8;
+            this.Tranzaction_Date.Location = new System.Drawing.Point(11, 41);
+            this.Tranzaction_Date.Name = "Tranzaction_Date";
+            this.Tranzaction_Date.ReadOnly = true;
+            this.Tranzaction_Date.Size = new System.Drawing.Size(155, 20);
+            this.Tranzaction_Date.TabIndex = 8;
             // 
             // groupBox1
             // 
@@ -277,7 +277,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox CCI;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox EmailC;
+        private System.Windows.Forms.TextBox Tranzaction_Date;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;

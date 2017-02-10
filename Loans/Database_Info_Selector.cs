@@ -88,7 +88,7 @@ namespace Money_Management
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
         }
 
         private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
