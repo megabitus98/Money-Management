@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Money_Management
         private static string user;
         private static int admin;
         List<string> Client = new List<string>();
+        Useful useful = new Useful();
         public Pay_loan(string username, int Admin)
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace Money_Management
         }
         Database_Info_Selector l = new Database_Info_Selector();
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             l.Tag = " ";
             l.Show();
@@ -31,7 +33,7 @@ namespace Money_Management
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             if ((string)l.Tag == "Closed")
             {
@@ -60,6 +62,38 @@ namespace Money_Management
             Main_Menu m = new Main_Menu(user, admin);
             m.Show();
             Hide();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (useful.CheckEmptySpaces(groupBoxLoan)==false)
+            {
+                var confirmResult = MessageBox.Show("Are you sure you want to pay the loan for: " + textBox3.Text + "?", "Confirm Payment!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    using (MySqlConnection conn = new MySqlConnection())
+                    {
+                        conn.ConnectionString = Properties.Settings.Default.ProjectConnectionString;
+                        try
+                        {
+                            conn.Open();
+                            using (MySqlCommand cmd = new MySqlCommand("UPDATE Loans SET Paid=1 WHERE idLoan=@Loan", conn))
+                            {
+                                cmd.Parameters.AddWithValue("@Loan", textBox1.Text);
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("Paid " + "the loan for " + textBox3.Text, "Payment suceded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                useful.ClearThings(groupBoxLoan);
+                                useful.ClearThings(groupBox1);
+                                useful.ClearThings(CCI);
+                            }
+                        }
+                        catch (Exception z)
+                        {
+                            Useful.Error_Message(z, true);
+                        }
+                    }
+                }
+            }
         }
     }
 }

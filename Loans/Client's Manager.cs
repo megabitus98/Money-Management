@@ -33,7 +33,7 @@ namespace Money_Management
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (useful.CheckEmptySpaces(Add_Client_GroupBox, Surname, Email, Phone) == false)
+            if (useful.CheckEmptySpaces(Add_Client_GroupBox, Surname, Email, Phone))
             {
                 using (MySqlConnection conn = new MySqlConnection())
                 {
