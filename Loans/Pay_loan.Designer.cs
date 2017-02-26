@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pay_loan));
             this.groupBoxLoan = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.RON = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.CCI = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.Tranzaction_Date = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -50,6 +53,9 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Back_Button = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBoxLoan.SuspendLayout();
             this.CCI.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -57,6 +63,7 @@
             // 
             // groupBoxLoan
             // 
+            this.groupBoxLoan.Controls.Add(this.dateTimePicker1);
             this.groupBoxLoan.Controls.Add(this.button2);
             this.groupBoxLoan.Controls.Add(this.RON);
             this.groupBoxLoan.Controls.Add(this.label1);
@@ -64,17 +71,26 @@
             this.groupBoxLoan.Controls.Add(this.textBox1);
             this.groupBoxLoan.Controls.Add(this.textBox2);
             this.groupBoxLoan.Controls.Add(this.label2);
-            this.groupBoxLoan.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxLoan.Location = new System.Drawing.Point(236, 12);
             this.groupBoxLoan.Name = "groupBoxLoan";
-            this.groupBoxLoan.Size = new System.Drawing.Size(197, 100);
+            this.groupBoxLoan.Size = new System.Drawing.Size(265, 100);
             this.groupBoxLoan.TabIndex = 11;
             this.groupBoxLoan.TabStop = false;
             this.groupBoxLoan.Text = "Pay Loan";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "ddMMMMyyyy";
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 74);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(202, 20);
+            this.dateTimePicker1.TabIndex = 9;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
+            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(157, 13);
+            this.button2.Location = new System.Drawing.Point(161, 16);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 20);
             this.button2.TabIndex = 21;
@@ -86,7 +102,7 @@
             // 
             this.RON.AutoSize = true;
             this.RON.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RON.Location = new System.Drawing.Point(154, 42);
+            this.RON.Location = new System.Drawing.Point(158, 46);
             this.RON.Name = "RON";
             this.RON.Size = new System.Drawing.Size(34, 13);
             this.RON.TabIndex = 20;
@@ -103,9 +119,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(93, 65);
+            this.button1.Location = new System.Drawing.Point(198, 13);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 27);
+            this.button1.Size = new System.Drawing.Size(61, 46);
             this.button1.TabIndex = 19;
             this.button1.Text = "Pay Loan";
             this.button1.UseVisualStyleBackColor = true;
@@ -115,15 +131,16 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(87, 13);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 20);
+            this.textBox1.Size = new System.Drawing.Size(68, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(87, 39);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(64, 20);
+            this.textBox2.Size = new System.Drawing.Size(68, 20);
             this.textBox2.TabIndex = 2;
             // 
             // label2
@@ -137,27 +154,51 @@
             // 
             // CCI
             // 
+            this.CCI.Controls.Add(this.label8);
+            this.CCI.Controls.Add(this.textBox7);
+            this.CCI.Controls.Add(this.label7);
+            this.CCI.Controls.Add(this.label3);
+            this.CCI.Controls.Add(this.textBox6);
             this.CCI.Controls.Add(this.label9);
             this.CCI.Controls.Add(this.Tranzaction_Date);
-            this.CCI.Location = new System.Drawing.Point(215, 13);
+            this.CCI.Location = new System.Drawing.Point(12, 117);
             this.CCI.Name = "CCI";
-            this.CCI.Size = new System.Drawing.Size(172, 99);
+            this.CCI.Size = new System.Drawing.Size(246, 121);
             this.CCI.TabIndex = 17;
             this.CCI.TabStop = false;
             this.CCI.Text = "Loan Infromartions";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 26);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Selected \r\nDate";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(78, 53);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(155, 20);
+            this.textBox6.TabIndex = 10;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 25);
+            this.label9.Location = new System.Drawing.Point(6, 16);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 13);
+            this.label9.Size = new System.Drawing.Size(66, 26);
             this.label9.TabIndex = 3;
-            this.label9.Text = "Tranzaction Date";
+            this.label9.Text = "Tranzaction \r\nDate";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Tranzaction_Date
             // 
-            this.Tranzaction_Date.Location = new System.Drawing.Point(11, 41);
+            this.Tranzaction_Date.Location = new System.Drawing.Point(78, 16);
             this.Tranzaction_Date.Name = "Tranzaction_Date";
             this.Tranzaction_Date.ReadOnly = true;
             this.Tranzaction_Date.Size = new System.Drawing.Size(155, 20);
@@ -171,7 +212,7 @@
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Location = new System.Drawing.Point(12, 118);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(218, 99);
             this.groupBox1.TabIndex = 18;
@@ -235,19 +276,46 @@
             // 
             // Back_Button
             // 
-            this.Back_Button.Location = new System.Drawing.Point(295, 189);
+            this.Back_Button.Location = new System.Drawing.Point(417, 209);
             this.Back_Button.Name = "Back_Button";
-            this.Back_Button.Size = new System.Drawing.Size(92, 28);
+            this.Back_Button.Size = new System.Drawing.Size(78, 28);
             this.Back_Button.TabIndex = 22;
             this.Back_Button.Text = "Back";
             this.Back_Button.UseVisualStyleBackColor = true;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Amount Lend";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(78, 92);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(115, 20);
+            this.textBox7.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(199, 95);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "RON";
+            // 
             // Pay_loan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 224);
+            this.ClientSize = new System.Drawing.Size(509, 247);
             this.Controls.Add(this.Back_Button);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CCI);
@@ -256,6 +324,7 @@
             this.Name = "Pay_loan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pay_loan";
+            this.Load += new System.EventHandler(this.Pay_loan_Load);
             this.groupBoxLoan.ResumeLayout(false);
             this.groupBoxLoan.PerformLayout();
             this.CCI.ResumeLayout(false);
@@ -288,5 +357,11 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button Back_Button;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

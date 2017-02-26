@@ -25,12 +25,17 @@ namespace Money_Management
         }
         Database_Info_Selector l = new Database_Info_Selector();
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void Fill_Values()
         {
             l.Tag = " ";
             l.Show();
-            l.Command("SELECT Name, Amount, Tranzaction_Date, Total_Loans, Phone, Email, idLoan FROM Loans INNER JOIN Clients ON Loans.clientId=Clients.idClients WHERE Paid=0");
+            l.Command("SELECT Name, Amount, Tranzaction_Date, Total_Loans, Phone, Email, idLoan, Receive_Amount FROM Loans INNER JOIN Clients ON Loans.clientId=Clients.idClients WHERE Paid=0");
             timer1.Start();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Fill_Values();
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -43,11 +48,12 @@ namespace Money_Management
                     try
                     {
                         textBox1.Text = Client[6];
-                        textBox2.Text = Client[1];
+                        textBox2.Text = Client[7];
                         Tranzaction_Date.Text = Client[2];
                         textBox3.Text = Client[0];
                         textBox4.Text = Client[4];
                         textBox5.Text = Client[5];
+                        textBox7.Text = Client[1];
                     }
                     catch (Exception z)
                     {
@@ -94,6 +100,21 @@ namespace Money_Management
                     }
                 }
             }
+        }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            textBox6.Text = dateTimePicker1.Value.ToLongDateString();
+        }
+
+        private void Pay_loan_Load(object sender, EventArgs e)
+        {
+            textBox6.Text = dateTimePicker1.Value.ToLongDateString();
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+           // Fill_Values();
         }
     }
 }
