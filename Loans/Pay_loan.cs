@@ -83,9 +83,10 @@ namespace Money_Management
                         try
                         {
                             conn.Open();
-                            using (MySqlCommand cmd = new MySqlCommand("UPDATE Loans SET Paid=1 WHERE idLoan=@Loan", conn))
+                            using (MySqlCommand cmd = new MySqlCommand("UPDATE Loans SET Paid=1, Payed_Date=@date WHERE idLoan=@Loan", conn))
                             {
                                 cmd.Parameters.AddWithValue("@Loan", textBox1.Text);
+                                cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value);
                                 cmd.ExecuteNonQuery();
                                 MessageBox.Show("Paid " + "the loan for " + textBox3.Text, "Payment suceded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 useful.ClearThings(groupBoxLoan);

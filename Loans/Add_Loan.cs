@@ -95,13 +95,17 @@ namespace Money_Management
         }
         bool Verificare_money()
         {
+            bool Global_OK = true;
             foreach (char item in textBox2.Text)
                 if (char.IsLetter(item) == true)
-                    return false;
-            return true;
+                    Global_OK = false;
+            foreach (char item in textBox3.Text)
+                if (char.IsLetter(item) == true)
+                    Global_OK = false;
+            return Global_OK;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             l.Tag = " ";
             l.Show();
@@ -109,7 +113,7 @@ namespace Money_Management
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             if ((string)l.Tag == "Closed")
             {
@@ -117,6 +121,15 @@ namespace Money_Management
                 textBox1.Text = Client[1];
                 timer1.Stop();
             }
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            int nr=0;
+            if (textBox2.Text != "")
+                nr = Convert.ToInt32(textBox2.Text);
+            if (nr!=0) nr += 5;
+            textBox3.Text = nr.ToString();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -146,13 +159,14 @@ namespace Money_Management
                                     tl = Convert.ToInt32(reader["Total_Loans"]);
                                 }
                         }
-                        using (MySqlCommand cmd = new MySqlCommand("INSERT INTO Loans(clientId, Amount, Tranzaction_Date)" +
-                                                                "values(@id, @money, @date)", conn))
+                        using (MySqlCommand cmd = new MySqlCommand("INSERT INTO Loans(clientId, Amount, Tranzaction_Date, Receive_Amount)" +
+                                                                "values(@id, @money, @date, @amount)", conn))
                         {
                             cmd.Parameters.AddWithValue("@id", id);
                             DateTime rightnow = DateTime.Now;
                             cmd.Parameters.AddWithValue("@date", rightnow);
                             cmd.Parameters.AddWithValue("@money", textBox2.Text);
+                            cmd.Parameters.AddWithValue("@amount", textBox3.Text);
                             cmd.ExecuteNonQuery();
                         }
                         using (MySqlCommand cmd = new MySqlCommand("SELECT idLoan FROM Loans", conn))
@@ -172,8 +186,8 @@ namespace Money_Management
                             cmd.ExecuteNonQuery();
                         }
                     }
+                    usefuel.ClearThings(groupBoxLoan);
                 }
-            usefuel.ClearThings(groupBoxLoan);
         }
     }
 }
