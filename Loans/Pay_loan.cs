@@ -72,31 +72,36 @@ namespace Money_Management
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (useful.CheckEmptySpaces(groupBoxLoan)==false)
+            if (useful.CheckEmptySpaces(groupBoxLoan, textBox2) == false)
             {
-                var confirmResult = MessageBox.Show("Are you sure you want to pay the loan for: " + textBox3.Text + "?", "Confirm Payment!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                if (confirmResult == DialogResult.Yes)
+                if (dateTimePicker1.Value > DateTime.Now)
+                    Useful.Error_Message("Data selectata nu este valida!", false);
+                else
                 {
-                    using (MySqlConnection conn = new MySqlConnection())
+                    var confirmResult = MessageBox.Show("Are you sure you want to pay the loan for: " + textBox3.Text + "?", "Confirm Payment!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    if (confirmResult == DialogResult.Yes)
                     {
-                        conn.ConnectionString = Properties.Settings.Default.ProjectConnectionString;
-                        try
+                        using (MySqlConnection conn = new MySqlConnection())
                         {
-                            conn.Open();
-                            using (MySqlCommand cmd = new MySqlCommand("UPDATE Loans SET Paid=1, Payed_Date=@date WHERE idLoan=@Loan", conn))
+                            conn.ConnectionString = Properties.Settings.Default.ProjectConnectionString;
+                            try
                             {
-                                cmd.Parameters.AddWithValue("@Loan", textBox1.Text);
-                                cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value);
-                                cmd.ExecuteNonQuery();
-                                MessageBox.Show("Paid " + "the loan for " + textBox3.Text, "Payment suceded", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                useful.ClearThings(groupBoxLoan);
-                                useful.ClearThings(groupBox1);
-                                useful.ClearThings(CCI);
+                                conn.Open();
+                                using (MySqlCommand cmd = new MySqlCommand("UPDATE Loans SET Paid=1, Payed_Date=@date WHERE idLoan=@Loan", conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@Loan", textBox1.Text);
+                                    cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value);
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("Paid " + "the loan for " + textBox3.Text, "Payment suceded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    useful.ClearThings(groupBoxLoan);
+                                    useful.ClearThings(groupBox1);
+                                    useful.ClearThings(CCI);
+                                }
                             }
-                        }
-                        catch (Exception z)
-                        {
-                            Useful.Error_Message(z, true);
+                            catch (Exception z)
+                            {
+                                Useful.Error_Message(z, true);
+                            }
                         }
                     }
                 }
@@ -115,7 +120,7 @@ namespace Money_Management
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-           // Fill_Values();
+            // Fill_Values();
         }
     }
 }

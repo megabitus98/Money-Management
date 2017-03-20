@@ -21,3 +21,26 @@ D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Man
 D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.application
 D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Pay_loan.resources
 D:\Online Clouding\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Database_Info_Selector.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.exe.config
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.exe.manifest
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.application
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.exe
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.pdb
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.exe.CodeAnalysisLog.xml
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\bin\Debug\Money Management.exe.lastcodeanalysissucceeded
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Add_Client.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Add_Loan.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Client_s_List.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Database_Info_Selector.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Loan_s_List.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Login.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Main_Menu.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Pay_loan.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.Properties.Resources.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money_Management.User_s_List.resources
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.csproj.GenerateResource.Cache
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.exe.manifest
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.application
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.exe
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.pdb
+D:\Cloud Storage\Dropbox\Programare\Money-Management\Loans\obj\Debug\Money Management.csprojResolveAssemblyReference.cache
