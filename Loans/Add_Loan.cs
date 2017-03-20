@@ -125,11 +125,15 @@ namespace Money_Management
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
-            int nr=0;
-            if (textBox2.Text != "")
-                nr = Convert.ToInt32(textBox2.Text);
-            if (nr!=0) nr += 5;
-            textBox3.Text = nr.ToString();
+            if (!Useful.debug)
+            {
+                int nr = 0;
+                if (textBox2.Text != "")
+                    nr = Convert.ToInt32(textBox2.Text);
+                if (nr != 0) nr += 5;
+                textBox3.Text = nr.ToString();
+            }
+            else textBox3.Text = textBox2.Text;
         }
 
         private void Button1_Click(object sender, EventArgs e)

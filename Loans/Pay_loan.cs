@@ -29,7 +29,7 @@ namespace Money_Management
         {
             l.Tag = " ";
             l.Show();
-            l.Command("SELECT Name, Amount, Tranzaction_Date, Total_Loans, Phone, Email, idLoan, Receive_Amount FROM Loans INNER JOIN Clients ON Loans.clientId=Clients.idClients WHERE Paid=0");
+            l.Command("SELECT idLoan 'Nr.Loan', Name, Amount, Receive_Amount 'Amount to Receive', Tranzaction_Date 'Tranzaction Date', Phone, Email, Total_Loans 'Total Loans' FROM Loans INNER JOIN Clients ON Loans.clientId=Clients.idClients WHERE Paid=0 ORDER BY Name");
             timer1.Start();
         }
 
@@ -47,13 +47,13 @@ namespace Money_Management
                     Client = l.results;
                     try
                     {
-                        textBox1.Text = Client[6];
-                        textBox2.Text = Client[7];
-                        Tranzaction_Date.Text = Client[2];
-                        textBox3.Text = Client[0];
-                        textBox4.Text = Client[4];
-                        textBox5.Text = Client[5];
-                        textBox7.Text = Client[1];
+                        textBox1.Text = Client[0];
+                        textBox2.Text = Client[3];
+                        Tranzaction_Date.Text = Client[4];
+                        textBox3.Text = Client[1];
+                        textBox4.Text = Client[5];
+                        textBox5.Text = Client[6];
+                        textBox7.Text = Client[2];
                     }
                     catch (Exception z)
                     {

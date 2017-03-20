@@ -8,6 +8,8 @@ namespace Money_Management
 {
     class Useful
     {
+        public static bool debug=true;
+
         #region checkEmptySpaces
 
         public bool CheckEmptySpaces(GroupBox con)
