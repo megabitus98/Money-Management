@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Money Management.exe" size="2153928">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Money Management.exe" size="2154440">
       <assemblyIdentity name="Money Management" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NZnrom6ys6R0UUC6691LK56/EM15xSm0fH3FTBkGbGk=</dsig:DigestValue>
+        <dsig:DigestValue>3oJHtW4WLE1dbWXvzIvlcRJ/ENf9VzSaRWGM5F6iCcU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

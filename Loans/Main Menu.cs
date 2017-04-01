@@ -62,6 +62,11 @@ namespace Money_Management
             {
                 button1.Enabled = true;
             }
+            if (Useful.debug)
+            {
+                label1.Hide();
+                label2.Hide();
+            }
         }
 
         private void Button2_Click(object sender, EventArgs e)

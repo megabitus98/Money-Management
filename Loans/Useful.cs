@@ -128,7 +128,7 @@ namespace Money_Management
         {
             bool OK = false;
             int[] ports = new int[] { 3306, 6999 };
-            string[] ips = new string[] { "192.168.1.4", "86.34.214.136", "megabitus.tech" };
+            string[] ips = new string[] { "192.168.1.4", "31.5.41.124", "megabitus.myftp.org" };
             foreach (int port in ports)
             {
                 if (OK == true) break;
