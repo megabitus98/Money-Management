@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Money Management.exe" size="2159048">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Money Management.exe" size="2158024">
       <assemblyIdentity name="Money Management" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>f6gQHHTkBp6WBwqDcfgnIzFNI7DoRlrw4n1inwjdDzc=</dsig:DigestValue>
+        <dsig:DigestValue>VZJMkz4nuMcl6WGrPLPcaSOYUZnfIHJGCEsLk4ep9Tg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -66,13 +66,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Money Management.exe.config" size="1404">
+  <file name="Money Management.exe.config" size="2602">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>L7Xej8aR0XQ/wibu5RlLXEJjNTllmgqwgtOIJYL73vQ=</dsig:DigestValue>
+      <dsig:DigestValue>Z6f8vN0//e6IXqW5FDrNX8koAMlIuz6nibB42A+WK5w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Untitled-1.ico" size="209150">

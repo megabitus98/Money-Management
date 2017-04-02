@@ -132,26 +132,30 @@ namespace Money_Management
             return connectable;
         }
 
-        public static void TryDatabaseConnection(int[] ports, params string[] ips)
+        public static void TryDatabaseConnection(int[] ports, string[] ips)
         {
             bool OK = false;
             foreach (int port in ports)
             {
                 if (OK == true) break;
-                foreach (string ip in ips)
-                    if (ip != null)
-                    {
-                        changeText = "Server Status: Trying to contact server: " + ip + ":" + port;
-                        if (PingHost(ip) == true && DatabaseConnection(ip, port) == true)
+                if (port != 0)
+                    foreach (string ip in ips)
+                        if (string.IsNullOrWhiteSpace(ip) == false)
                         {
-                            OK = true;
-                            buttons = true;
-                            changeText = "Server Status: Connected to server: " + ip + ":" + port;
-                            Properties.Settings.Default.ProjectConnectionString = "SERVER=" + ip + "; " + "Port=" + port + Properties.Settings.Default.ProjectConnectionTemplate;
-                            Transformation.TransformSize(Form.ActiveForm, 345, 170);
-                            break;
+                            changeText = "Server Status: Trying to contact server: " + ip + ":" + port;
+                            if (PingHost(ip) == true && DatabaseConnection(ip, port) == true)
+                            {
+                                Properties.Settings.Default.ServerIP = ip;
+                                Properties.Settings.Default.ServerPort = port;
+                                OK = true;
+                                buttons = true;
+                                changeText = "Server Status: Connected to server: " + ip + ":" + port;
+                                Properties.Settings.Default.ProjectConnectionString = "SERVER=" + ip + "; " + "Port=" + port + Properties.Settings.Default.ProjectConnectionTemplate;
+                                Transformation.TransformSize(Form.ActiveForm, 345, 170);
+                                break;
+                            }
+
                         }
-                    }
             }
             if (OK == false)
             {
@@ -159,7 +163,6 @@ namespace Money_Management
                 System.Threading.Thread.Sleep(1000);
                 Transformation.TransformSize(Form.ActiveForm, 345, 335);
             }
-
         }
 
         #endregion
@@ -204,52 +207,5 @@ namespace Money_Management
 
         #endregion
 
-        #region Encryption
-
-        public static string Encrypt(string clearText)
-        {
-            string EncryptionKey = Application.ProductName;
-            byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
-            using (Aes encryptor = Aes.Create())
-            {
-                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
-                encryptor.Key = pdb.GetBytes(32);
-                encryptor.IV = pdb.GetBytes(16);
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
-                    {
-                        cs.Write(clearBytes, 0, clearBytes.Length);
-                        cs.Close();
-                    }
-                    clearText = Convert.ToBase64String(ms.ToArray());
-                }
-            }
-            return clearText;
-        }
-
-        public static string Decrypt(string cipherText)
-        {
-            string EncryptionKey = Application.ProductName;
-            byte[] cipherBytes = Convert.FromBase64String(cipherText);
-            using (Aes encryptor = Aes.Create())
-            {
-                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
-                encryptor.Key = pdb.GetBytes(32);
-                encryptor.IV = pdb.GetBytes(16);
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
-                    {
-                        cs.Write(cipherBytes, 0, cipherBytes.Length);
-                        cs.Close();
-                    }
-                    cipherText = Encoding.Unicode.GetString(ms.ToArray());
-                }
-            }
-            return cipherText;
-        }
-
-        #endregion
     }
 }

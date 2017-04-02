@@ -82,7 +82,7 @@ namespace Money_Management
         {
             groupBox1.Visible = false;
             this.Size = new Size(345, 170);
-            ThreadStart connection = new ThreadStart(() => Useful.TryDatabaseConnection(new int[] { 3306, 6999 }, "192.168.1.4", "31.5.41.124", "megabitus.myftp.org"));
+            ThreadStart connection = new ThreadStart(() => Useful.TryDatabaseConnection(new int[] { Properties.Settings.Default.ServerPort, 3306, 6999 }, new string[] { Properties.Settings.Default.ServerIP, "192.168.1.46", "31.5.41.1246", "megabitus.myftp.org6" }));
             Thread connectionTh = new Thread(connection);
             connectionTh.Start();
         }
@@ -107,7 +107,7 @@ namespace Money_Management
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            ThreadStart connection = new ThreadStart(() => Useful.TryDatabaseConnection(new int[] { int.Parse(textBox4.Text) }, textBox3.Text));
+            ThreadStart connection = new ThreadStart(() => Useful.TryDatabaseConnection(new int[] { int.Parse(textBox4.Text) }, new string[] { textBox3.Text }));
             Thread connectionTh = new Thread(connection);
             connectionTh.Start();
         }
