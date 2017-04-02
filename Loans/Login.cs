@@ -80,21 +80,36 @@ namespace Money_Management
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ThreadStart connection = new ThreadStart(() => Useful.TryDatabaseConnection());
+            groupBox1.Visible = false;
+            this.Size = new Size(345, 170);
+            ThreadStart connection = new ThreadStart(() => Useful.TryDatabaseConnection(new int[] { 3306, 6999 }, "192.168.1.4", "31.5.41.124", "megabitus.myftp.org"));
             Thread connectionTh = new Thread(connection);
-            connectionTh.Start();         
+            connectionTh.Start();
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
             label3.Text = Useful.changeText;
             button4.Enabled = Useful.buttons;
-            if (Useful.buttons == true) timer1.Enabled = false;
+            if (label3.Text == "Server Status: Switching to manual connection!")
+                groupBox1.Visible = true;
+            if (Useful.buttons == true)
+            {
+                timer1.Enabled = false;
+                groupBox1.Visible = false;
+            }
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            ThreadStart connection = new ThreadStart(() => Useful.TryDatabaseConnection(new int[] { int.Parse(textBox4.Text) }, textBox3.Text));
+            Thread connectionTh = new Thread(connection);
+            connectionTh.Start();
         }
     }
 }

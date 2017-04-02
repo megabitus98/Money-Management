@@ -83,8 +83,12 @@ namespace Money_Management
         #endregion
 
         #region checkServerConnectionIp
+
         public static string changeText;
         public static bool buttons = false;
+
+        public static bool networkUp = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
+
         private static bool PingHost(string ip)
         {
             bool pingable = false;
@@ -128,11 +132,9 @@ namespace Money_Management
             return connectable;
         }
 
-        public static void TryDatabaseConnection()
+        public static void TryDatabaseConnection(int[] ports, params string[] ips)
         {
             bool OK = false;
-            int[] ports = new int[] { 3306, 6999 };
-            string[] ips = new string[] { "192.168.1.4", "31.5.41.124", "megabitus.myftp.org" };
             foreach (int port in ports)
             {
                 if (OK == true) break;
@@ -146,11 +148,20 @@ namespace Money_Management
                             buttons = true;
                             changeText = "Server Status: Connected to server: " + ip + ":" + port;
                             Properties.Settings.Default.ProjectConnectionString = "SERVER=" + ip + "; " + "Port=" + port + Properties.Settings.Default.ProjectConnectionTemplate;
+                            Transformation.TransformSize(Form.ActiveForm, 345, 170);
                             break;
                         }
                     }
             }
+            if (OK == false)
+            {
+                changeText = "Server Status: Switching to manual connection!";
+                System.Threading.Thread.Sleep(1000);
+                Transformation.TransformSize(Form.ActiveForm, 345, 335);
+            }
+
         }
+
         #endregion
 
         #region dataAdapterFill
