@@ -98,7 +98,7 @@ namespace Money_Management
             Hide();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void Button9_Click(object sender, EventArgs e)
         {
             Pay_loan l = new Pay_loan(user, admin);
             l.Show();

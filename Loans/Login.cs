@@ -82,7 +82,7 @@ namespace Money_Management
         {
             ThreadStart connection = new ThreadStart(() => Useful.TryDatabaseConnection());
             Thread connectionTh = new Thread(connection);
-            connectionTh.Start();
+            connectionTh.Start();         
         }
 
         private void Timer1_Tick(object sender, EventArgs e)

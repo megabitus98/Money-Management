@@ -148,7 +148,7 @@
             this.button9.TabIndex = 15;
             this.button9.Text = "Pay Loan";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // Main_Menu
             // 
