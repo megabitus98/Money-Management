@@ -82,7 +82,7 @@ namespace Money_Management
         {
             groupBox1.Visible = false;
             this.Size = new Size(345, 170);
-            ThreadStart connection = new ThreadStart(() => Useful.TryDatabaseConnection(new int[] { Properties.Settings.Default.ServerPort, 3306, 6999 }, new string[] { Properties.Settings.Default.ServerIP, "192.168.1.46", "31.5.41.1246", "megabitus.myftp.org6" }));
+            ThreadStart connection = new ThreadStart(() => Useful.TryDatabaseConnection(new int[] { Properties.Settings.Default.ServerPort, 3306, 6999 }, new string[] { Properties.Settings.Default.ServerIP, "192.168.1.4", "31.5.41.124", "megabitus.myftp.org" }));
             Thread connectionTh = new Thread(connection);
             connectionTh.Start();
         }
